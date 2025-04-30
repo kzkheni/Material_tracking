@@ -20,7 +20,17 @@ class DashboardScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
-       const MaterialManagementScreen(),
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ),
+      floatingActionButton: currentUser.role == 'admin'
+          ? FloatingActionButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const MaterialManagementScreen(),
                   ),
                 );
               },
